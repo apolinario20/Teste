@@ -106,7 +106,7 @@ IMG_FILE="$VM_DIR/debian-cloud.qcow2"
 SEED_FILE="$VM_DIR/seed.iso"
 MEMORY=9000
 CPUS=4
-SSH_PORT=24
+SSH_PORT=2222
 DISK_SIZE=100G
 
 mkdir -p "$VM_DIR"
