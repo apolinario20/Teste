@@ -106,7 +106,7 @@ IMG_FILE="$VM_DIR/debian-cloud.qcow2"
 SEED_FILE="$VM_DIR/seed.iso"
 MEMORY=9000
 CPUS=4
-SSH_PORT=2222
+SSH_PORT=24
 DISK_SIZE=100G
 
 mkdir -p "$VM_DIR"
@@ -183,7 +183,7 @@ exec qemu-system-x86_64 \
     -drive file="$SEED_FILE",format=raw,if=virtio \
     -boot order=c \
     -device virtio-net-pci,netdev=n0 \
-    -netdev user,id=n0,hostfwd=tcp::"$SSH_PORT"-:22 \
+    -netdev user,id=n0,hostfwd=tcp::2222-:22 \
     -nographic -serial mon:stdio
 EOF
 
